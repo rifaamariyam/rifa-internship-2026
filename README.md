@@ -1,32 +1,29 @@
+
 # Mushroom Yield Project
 
 
 
 
 
-\## Environment Setup
+## Environment Setup
 
 
 
-1\. Create virtual environment
-
-&#x20;  python -m venv venv
-
-
-
-2\. Activate virtual environment
-
-&#x20;  venv\\Scripts\\activate
+1. Create virtual environment
+  python -m venv venv
 
 
 
-3\. Install dependencies
+2. Activate virtual environment
 
-&#x20;  pip install pandas numpy matplotlib scikit-learn jupyter
+  venv\\Scripts\\activate
 
 
 
-4\. Run smoke test
+3. Install dependencies
+  pip install pandas numpy matplotlib scikit-learn jupyter
 
-&#x20;  python src\\smoke\_test.py
 
+
+4. Run smoke test
+  python src\\smoke\_test.py
