@@ -65,3 +65,35 @@ feature engineering
 train.py
        ↓
 yield prediction model
+
+
+
+## cleaning log ## -day4
+
+loaded clean.py file into src
+
+This script performs data cleaning and preprocessing using several common techniques:
+1 Missing value analysis
+2 Range-based filtering (data validation)
+3 Null target removal
+4 Forward-fill imputation
+5 Deletion of missing targets
+6 Deduplication
+
+Overall Cleaning Strategy
+
+This is a combination of:
+
+1 Data Validation Cleaning
+  Filters out out-of-range sensor readings.
+2 Missing Value Treatment
+  Forward-fill imputation for sensor data.
+  Row deletion for missing target values.
+3 Data Deduplication
+  Removes duplicate timestamps.
+4 Quality-Based Filtering
+  Retains only records that satisfy predefined oyster polyhouse environmental conditions.
+
+Duplicate records were identified using the timestamp column and removed while retaining the latest occurrence. A total of 0 duplicate records were removed, resulting in a final cleaned dataset containing 365 rows.
+
+02_cleaned.parquet was successfully loaded and validated. The target column (yield_kg) contains 0 missing values, confirming that all records are suitable for downstream analysis and model training.
