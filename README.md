@@ -27,3 +27,17 @@
 
 4. Run smoke test
   python src\\smoke\_test.py
+
+
+
+## Project Overview
+
+This project predicts mushroom yield using Python and machine learning.
+
+## Folder Structure
+
+- data/raw
+- models
+- outputs
+- src
+
