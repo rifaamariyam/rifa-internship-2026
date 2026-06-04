@@ -1,5 +1,5 @@
 
-# Mushroom Yield Project
+# Mushroom Yield Project-day 1
 
 
 
@@ -30,7 +30,7 @@
 
 
 
-## Project Overview
+## Project Overview-day 2
 
 This project predicts mushroom yield using Python and machine learning.
 
