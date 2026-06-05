@@ -97,3 +97,39 @@ This is a combination of:
 Duplicate records were identified using the timestamp column and removed while retaining the latest occurrence. A total of 0 duplicate records were removed, resulting in a final cleaned dataset containing 365 rows.
 
 02_cleaned.parquet was successfully loaded and validated. The target column (yield_kg) contains 0 missing values, confirming that all records are suitable for downstream analysis and model training.
+
+
+
+## Data Quality Report Generation ## -day5
+
+### Objective
+
+The objective of this script is to perform an exploratory assessment of the cleaned polyhouse sensor dataset and automatically generate a data quality report.
+
+### Tasks Performed
+
+1. Loads the cleaned dataset (`02_cleaned.parquet`).
+2. Calculates summary statistics for:
+
+   * Temperature
+   * Humidity
+   * CO₂ concentration
+   * Mushroom yield
+3. Computes the coefficient of variation (CV) to measure relative variability.
+4. Compares mean and median values to identify potential data skewness.
+5. Generates human-readable insights describing the distribution of each feature.
+6. Creates a Markdown report containing:
+
+   * Dataset size
+   * Date range
+   * Summary statistics table
+   * Distribution insights
+7. Saves the report as:
+
+```text
+reports/data_quality.md
+```
+
+### Output
+
+The generated report provides a concise overview of data quality and feature distributions, helping validate the dataset before feature engineering, visualization, and machine learning model development.
