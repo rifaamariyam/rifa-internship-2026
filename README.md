@@ -503,3 +503,129 @@ Because the dataset is split chronologically, the test period represents future 
 
 This behavior is expected in real-world forecasting scenarios and does not indicate data leakage. Instead, it reflects the model's ability to generalize to future data under changing conditions.
 
+
+## Baseline Linear Regression### -day 9
+
+### Objective
+
+Train a baseline Linear Regression model to predict mushroom yield using environmental sensor measurements and evaluate its performance on unseen test data.
+
+### Features
+
+| Feature | Description |
+|----------|-------------|
+| temperature_c | Temperature inside the polyhouse (°C) |
+| humidity_pct | Relative humidity (%) |
+| co2_ppm | Carbon dioxide concentration (ppm) |
+
+### Target
+
+| Target | Description |
+|----------|-------------|
+| yield_kg | Mushroom yield (kg) |
+
+### Methodology
+
+1. Loaded preprocessed train and test datasets.
+2. Trained a Linear Regression model using `X_train` and `y_train`.
+3. Generated predictions on the test set.
+4. Computed evaluation metrics:
+   - Mean Absolute Error (MAE)
+   - Root Mean Squared Error (RMSE)
+   - R² Score
+5. Inspected model coefficients to understand feature influence.
+6. Saved the trained model and evaluation reports.
+
+### Coefficient Interpretation
+
+Since all features were scaled using MinMaxScaler, coefficient magnitudes can be compared directly.
+
+- Positive coefficient → Higher feature value tends to increase yield.
+- Negative coefficient → Higher feature value tends to decrease yield.
+- Larger absolute coefficient → Greater influence on model predictions.
+
+### Evaluation Metrics
+
+- **MAE** measures average prediction error in kilograms.
+- **RMSE** penalizes larger prediction errors.
+- **R²** measures how much variation in yield is explained by the model.
+
+### Saved Artifacts
+
+#### Model
+
+- `models/linear_regression.joblib`
+
+#### Reports
+
+- `reports/metrics_linear.json`
+- `reports/metrics_linear.md`
+
+### Execution
+
+```bash
+python src/train_linear_model.py
+```
+
+### Baseline Assessment
+
+R² interpretation:
+
+| R² Score | Assessment |
+|-----------|------------|
+| > 0.70 | Strong baseline |
+| 0.50 – 0.70 | Reasonable baseline |
+| < 0.50 | Additional feature engineering or advanced models recommended |
+
+### Output
+
+The script prints:
+
+- MAE
+- RMSE
+- R² Score
+- Feature coefficients
+- Saved artifact locations
+
+The resulting model serves as a baseline benchmark for future machine learning experiments on mushroom yield prediction.
+
+
+# Linear Regression Diagnostics--day10
+
+## Residual Definition
+
+Residual = Actual Yield - Predicted Yield
+
+A positive residual indicates the model underpredicted yield.
+
+A negative residual indicates the model overpredicted yield.
+
+---
+
+## Diagnostic Findings
+
+### Residuals vs Predicted Yield
+
+The residuals are centered around zero, indicating that the model does not exhibit severe systematic bias.
+
+Any visible funnel shape would indicate heteroscedasticity.
+
+### Residuals vs Humidity
+
+Residuals are randomly distributed across humidity values with no strong pattern.
+
+A visible curve would indicate a nonlinear relationship not captured by Linear Regression.
+
+---
+
+## Recommendation
+
+The baseline Linear Regression model provides a useful starting point.
+
+If residual plots show curvature or increasing variance:
+
+- Add engineered features.
+- Try polynomial features.
+- Evaluate nonlinear models such as Random Forest Regression.
+
+Otherwise, continue with the linear baseline as a benchmark.
