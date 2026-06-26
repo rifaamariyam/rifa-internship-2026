@@ -1,0 +1,315 @@
+Mushroom Yield Prediction Using Machine Learning and Environmental Sensor Data
+
+Technical Report
+
+Author: Rifa Mariyam
+
+
+---
+
+Abstract
+
+This project presents the design and implementation of a machine learning pipeline for predicting oyster mushroom yield using environmental sensor measurements collected from a controlled polyhouse. The study integrates data ingestion, preprocessing, exploratory data analysis, feature engineering, supervised learning, model evaluation, hyperparameter optimization, deployment, and monitoring into a reproducible workflow. Temperature, relative humidity, and carbon dioxide concentration were used as predictive variables. Multiple regression models were evaluated using chronological train-test splitting and TimeSeriesSplit cross-validation to avoid temporal data leakage. The final system was deployed as an interactive Streamlit application capable of real-time yield prediction.
+
+
+---
+
+Chapter 1 Introduction
+
+Background
+
+Problem Statement
+
+Objectives
+
+Scope
+
+Contributions
+
+
+
+---
+
+Chapter 2 Literature Review
+
+Instead of generic AI content, this chapter can focus on
+
+Mushroom cultivation
+
+Environmental control
+
+Yield prediction
+
+Machine learning in agriculture
+
+Smart farming
+
+
+
+---
+
+Chapter 3 System Design
+
+This chapter will describe your complete workflow
+
+Raw Sensor Data
+        │
+        ▼
+Data Ingestion
+        │
+        ▼
+Cleaning
+        │
+        ▼
+EDA
+        │
+        ▼
+Feature Engineering
+        │
+        ▼
+Scaling
+        │
+        ▼
+Chronological Split
+        │
+        ▼
+Linear Regression
+        │
+        ▼
+Random Forest
+        │
+        ▼
+Hyperparameter Tuning
+        │
+        ▼
+Champion Model
+        │
+        ▼
+Deployment
+
+
+---
+
+Chapter 4 Data Collection
+
+Describe
+
+Dataset
+
+Sensor variables
+
+Target variable
+
+Number of observations
+
+Date range
+
+
+
+---
+
+Chapter 5 Data Preprocessing
+
+Include
+
+Missing value handling
+
+Duplicate removal
+
+Range validation
+
+Forward fill
+
+Target validation
+
+
+
+---
+
+Chapter 6 Exploratory Data Analysis
+
+Use the figures you've already generated:
+
+Correlation Heatmap
+
+Scatter plots
+
+Summary statistics
+
+Coefficient of variation
+
+Correlation analysis
+
+
+Interpret findings such as:
+
+Temperature has the strongest positive relationship with yield.
+
+Humidity shows a moderate positive correlation.
+
+CO₂ has a weak negative relationship.
+
+Scatter plots indicate approximately linear trends with varying strengths.
+
+
+
+---
+
+Chapter 7 Feature Engineering
+
+Explain
+
+Feature selection
+
+Temperature
+
+Humidity
+
+CO₂
+
+Interaction feature
+
+MinMax scaling
+
+Data leakage prevention
+
+
+
+---
+
+Chapter 8 Machine Learning Models
+
+Linear Regression
+
+Explain
+
+Mathematical model
+
+Assumptions
+
+Advantages
+
+Limitations
+
+
+
+---
+
+Random Forest
+
+Explain
+
+Decision trees
+
+Bootstrap aggregation
+
+Feature importance
+
+Advantages
+
+
+
+---
+
+Chapter 9 Model Evaluation
+
+Include
+
+MAE
+
+RMSE
+
+R²
+
+TimeSeriesSplit
+
+GridSearchCV
+
+
+Use your plots:
+
+CV MAE comparison
+
+Predicted vs Actual
+
+Residual plots
+
+
+Interpretation would note that Linear Regression achieved consistently lower MAE across the cross-validation folds shown, indicating better generalization than the default Random Forest on this dataset.
+
+
+---
+
+Chapter 10 Hyperparameter Optimization
+
+Describe
+
+GridSearchCV
+
+TimeSeriesSplit
+
+Best parameters
+
+max_depth = 8
+
+min_samples_leaf = 5
+
+n_estimators = 100
+
+Explain why these values reduce overfitting and improve generalization.
+
+
+---
+
+Chapter 11 Champion Model
+
+Present the rationale for selecting the final model based on your evaluation results, discussing prediction accuracy, stability, complexity, and interpretability. Include the Predicted vs Actual Yield plot and summarize the deployment recommendation.
+
+
+---
+
+Chapter 12 Deployment
+
+Describe
+
+Streamlit application
+
+Prediction API
+
+Input validation
+
+Feature scaling
+
+Model loading
+
+User interface
+
+
+
+---
+
+Chapter 13 Monitoring
+
+Discuss
+
+Data drift
+
+Sensor drift
+
+Retraining strategy
+
+Logging
+
+Business monitoring
+
+
+
+---
+
+Chapter 14 Conclusion
+
+Summarize achievements:
+
+End-to-end ML pipeline
+
+Time-aware validation
